@@ -26,7 +26,7 @@ async def start_photo_mode(message: types.Message, state: FSMContext):
 
 # 2. Обработка присланного фото
 @router.message(Form.waiting_for_photo, F.photo) 
-async def process_photo_to_sticker(message: types.Message, state: FSMContext): 
+async def process_photo_to_sticker(message: types.Message, state: FSMContext, bot: Bot): 
     await message.answer("Делаю стикер... ⏳")
     
     # Достаем ID самого качественного фото (последнее в списке)
@@ -74,7 +74,7 @@ async def start_sticker_mode(message: types.Message, state: FSMContext):
 
 # 2. Обработка присланного стикера
 @router.message(Form.waiting_for_sticker, F.sticker)
-async def process_sticker_to_photo(message: types.Message, state: FSMContext):
+async def process_sticker_to_photo(message: types.Message, state: FSMContext, bot: Bot):
     await message.answer("Превращаю в фото... 🪄")
     
     # Получаем и скачиваем стикер аналогично фото
