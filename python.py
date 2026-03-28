@@ -5,9 +5,6 @@ from aiogram import Router, F, types, Bot
 from PIL import Image # Движок для работы с пикселями (изменение размера, формата)
 from states import Form  # Класс с состояниями (waiting_for_photo и т.д.)
 from aiogram.fsm.context import FSMContext # Инструмент для управления состояниями юзера
-
-TOKEN = "YOUR_TOKEN_HERE" 
-bot = Bot(token=TOKEN) 
 router = Router() 
 
 # --- СТАРТ ---
